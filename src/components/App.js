@@ -29,7 +29,7 @@ import {
 import Product from './Product'
 import products from '../components/dataProducts'
 
-const initialState = products.map(p => ({...p, qty: 0}))
+const initialState = products.map(p => ({ ...p, qty: 0 }))
 
 
 
@@ -38,12 +38,12 @@ function App() {
   const [open, setOpen] = useState(false);
   const [prodName, setProdName] = useState('');
   const [selectedProducts, dispatch] = useReducer(reducer, initialState);
-  
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       setOpen(false)
     }, 2000)
-      return () => clearTimeout(timeout)
+    return () => clearTimeout(timeout)
   }, [open])
 
   function openAlert(name) {
@@ -95,8 +95,8 @@ function App() {
         main: '#ffb74d',
       },
     },
-    listItemText:{
-      fontSize:'4rem',//Insert your required size
+    listItemText: {
+      fontSize: '4rem',//Insert your required size
     }
   });
 
@@ -120,20 +120,21 @@ function App() {
 
 
           <Routes>
-            <Route path="strangelydisturbingcuisine" element={<Landing />} />
-            <Route path="explore" element={<Explore />} />
-            <Route path="explore/collections" element={<Collections />} />
-            <Route path="explore/products" element={<Store
-              dispatch={dispatch}
-              products={selectedProducts}
-            />} />
-            <Route path="explore/products/:id" element={<ProductInfo dispatch={dispatch} />} />
-            <Route path="*" element={<ErrorPage />} />
-            <Route path="checkout" element={
-            <Checkout cart={selectedProducts} dispatch={dispatch}>
-  
-              </Checkout>
+            <Route path="strangelydisturbingcuisine" element={<Landing />}>
+              <Route path="explore" element={<Explore />} />
+              <Route path="explore/collections" element={<Collections />} />
+              <Route path="explore/products" element={<Store
+                dispatch={dispatch}
+                products={selectedProducts}
+              />} />
+              <Route path="explore/products/:id" element={<ProductInfo dispatch={dispatch} />} />
+              <Route path="*" element={<ErrorPage />} />
+              <Route path="checkout" element={
+                <Checkout cart={selectedProducts} dispatch={dispatch}>
+
+                </Checkout>
               } />
+            </Route>
 
           </Routes>
         </ThemeProvider>
