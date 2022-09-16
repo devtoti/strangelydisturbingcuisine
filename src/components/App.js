@@ -29,7 +29,7 @@ import {
 import Product from './Product'
 import products from '../components/dataProducts'
 
-const initialState = products.map(p => ({ ...p, qty: 0 }))
+const initialState = products.map(p => ({...p, qty: 0}))
 
 
 
