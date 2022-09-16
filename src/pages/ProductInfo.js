@@ -20,7 +20,7 @@ function ProductInfo({ dispatch }) {
   const [data, setData] = useState({})
   const [favorite, setFavorite] = useState(false)
   const [isInCart, setIsInCart] = useState(false);
-
+  const [value, setValue] = useState(1)
   const [winHeight, setWinHeight] = useState(0)
   const [totalPrice, setTotalPrice] = useState(0)
   const [userQuantity, setUserQuantity] = useState(0)
@@ -38,6 +38,7 @@ function ProductInfo({ dispatch }) {
     setTotalPrice(data.price)
   }, [data])
 
+  
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsInCart(false)
@@ -50,30 +51,21 @@ function ProductInfo({ dispatch }) {
     }
   }, [isInCart])
 
+  useEffect(() => {
+    setTotalPrice(value * data.price)
+    setUserQuantity(value)
+  }, [value])
 
   let location = useLocation();
-  // console.log(location.pathname);
-  // console.log({ data, params })
+
   const { id, name, rating, price, img, description, category } = data
-
-  const handleToggle = (dispatch) => {
-
-    // console.log(dispatch)
-    // setIsInCart(!isInCart);
-    // const timeout = setTimeout(()=> {
-
-    //   setOpen(true)
-    // }, 1500)
-    // return () => clearTimeout(timeout)
-
-  };
 
 
   const addToFav = () => {
     setFavorite(prev => !prev)
   }
+
   const updateUserProducts = (e) => {
-    // console.log(e.target.valueAsNumber)
     value = e.target.valueAsNumber
     setTotalPrice(value * data.price)
     setUserQuantity(value)
@@ -163,9 +155,8 @@ function ProductInfo({ dispatch }) {
               <Typography>
                 Quantity
               </Typography>
-              <input type="number" min="1" max={50} placeholder="" step="1"
-
-                onChange={updateUserProducts} style={{ padding: "0 1rem" }}></input>
+              <input type="number" min="1" max={50} placeholder="" step="1" value={value}
+                onChange={(e) => setValue(e.target.valueAsNumber)} style={{ padding: "0 1rem" }}></input>
             </Box>
             <Stack direction="row" alignItems="center" >
               <Typography variant="body1" component="p" pr={1} sx={{ color: grey[500] }}>

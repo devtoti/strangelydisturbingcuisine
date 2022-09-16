@@ -121,19 +121,20 @@ function App() {
 
           <Routes>
             <Route path="strangelydisturbingcuisine" element={<Landing />} />
-              <Route path="strangelydisturbingcuisine/explore" element={<Explore />} />
-              <Route path="strangelydisturbingcuisine/explore/collections" element={<Collections />} />
-              <Route path="strangelydisturbingcuisine/explore/products" element={<Store
-                dispatch={dispatch}
-                products={selectedProducts}
-              />} />
-              <Route path="strangelydisturbingcuisine/explore/products/:id" element={<ProductInfo dispatch={dispatch} />} />
-              <Route path="*" element={<ErrorPage />} />
-              <Route path="strangelydisturbingcuisine/checkout" element={
-                <Checkout cart={selectedProducts} dispatch={dispatch}>
+            <Route path="/" element={<Landing />} />
+            <Route path="strangelydisturbingcuisine/explore" element={<Explore />} />
+            <Route path="strangelydisturbingcuisine/explore/collections" element={<Collections />} />
+            <Route path="strangelydisturbingcuisine/explore/products" element={<Store
+              dispatch={dispatch}
+              products={selectedProducts}
+            />} />
+            <Route path="strangelydisturbingcuisine/explore/products/:id" element={<ProductInfo dispatch={dispatch} />} />
+            <Route path="*" element={<ErrorPage />} />
+            <Route path="strangelydisturbingcuisine/checkout" element={
+              <Checkout cart={selectedProducts} dispatch={dispatch}>
 
-                </Checkout>
-              } />
+              </Checkout>
+            } />
 
           </Routes>
         </ThemeProvider>
