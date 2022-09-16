@@ -20,7 +20,7 @@ import { useLocation } from 'react-router-dom'
 
 function CartMenu({ array1, array2, dispatch }) {
     const location = useLocation()
-
+console.log(location.pathname)
     return (
 
 
@@ -84,8 +84,8 @@ function CartMenu({ array1, array2, dispatch }) {
 
                         ${array2.reduce((prev, curr) => prev + (curr.qty * curr.price), 0)}
                     </Typography>
-                    {location.pathname === '/checkout' && null}
-                    {location.pathname !== '/checkout' &&
+                    {location.pathname === '/strangelydisturbingcuisine/checkout' && null}
+                    {location.pathname !== '/strangelydisturbingcuisine/checkout' &&
                         <Button component={Link} to="strangelydisturbingcuisine/checkout" variant="contained" size="small">
                             Checkout
                         </Button>

@@ -85,7 +85,7 @@ export default function HorizontalLinearStepper({children}) {
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Box sx={{ flex: '1 1 auto' }} />
-            <Button component={Link} to="strangelydisturbingcuisine" onClick={handleReset}>homepage</Button>
+            <Button component={Link} to="/strangelydisturbingcuisine" onClick={handleReset}>homepage</Button>
           </Box>
         </React.Fragment>
       ) : (
