@@ -93,7 +93,7 @@ function ProductInfo({ dispatch }) {
       </Typography>
 
       <Button variant='outlined' sx={{ width: '100%', mt: 2 }}>
-        <Link to="explore/products">
+        <Link to="strangelydisturbingcuisine/explore/products">
           Explore
         </Link>
       </Button>

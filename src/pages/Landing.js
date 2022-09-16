@@ -49,7 +49,7 @@ function Landing() {
         <Typography variant="h5" component="h1" sx={{ textAlign: "center", color: grey[500]}}>
           E-Commerce site prototype built with MUI and AI generated products
         </Typography>
-        <Button component={Link} to="explore" variant="contained" pt={10} size="large" sx={{mt: 5}}>
+        <Button component={Link} to="strangelydisturbingcuisine/explore" variant="contained" pt={10} size="large" sx={{mt: 5}}>
           enter store
         </Button>
       </Stack>

@@ -36,8 +36,8 @@ function Explore() {
             </Typography>
             <Stack direction="row" justifyContent="space-between" pt={2}>
 
-              <Button variant="text" component={Link} to="products"> products</Button>
-              <Button variant="text" component={Link} to="collections"> Stores</Button>
+              <Button variant="text" component={Link} to="strangelydisturbingcuisine/products"> products</Button>
+              <Button variant="text" component={Link} to="strangelydisturbingcuisine/collections"> Stores</Button>
             </Stack>
           </Paper>
           <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', transform: 'translate(0, -125px)', overflow: 'hidden', width: '100%'}}>

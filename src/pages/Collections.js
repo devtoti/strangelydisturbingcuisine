@@ -54,7 +54,7 @@ function Landing() {
           cols={4} gap={15}>
           {stores.map((item, id) => {
             return (
-              <ImageListItem key={id} component={Link} to="/explore/products">
+              <ImageListItem key={id} component={Link} to="strangelydisturbingcuisine/explore/products">
                 <ImageListItemBar 
                 title={item.name}
                 position="top"

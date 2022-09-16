@@ -120,21 +120,20 @@ function App() {
 
 
           <Routes>
-            <Route path="strangelydisturbingcuisine" element={<Landing />}>
-              <Route path="explore" element={<Explore />} />
-              <Route path="explore/collections" element={<Collections />} />
-              <Route path="explore/products" element={<Store
+            <Route path="strangelydisturbingcuisine" element={<Landing />} />
+              <Route path="strangelydisturbingcuisine/explore" element={<Explore />} />
+              <Route path="strangelydisturbingcuisine/explore/collections" element={<Collections />} />
+              <Route path="strangelydisturbingcuisine/explore/products" element={<Store
                 dispatch={dispatch}
                 products={selectedProducts}
               />} />
-              <Route path="explore/products/:id" element={<ProductInfo dispatch={dispatch} />} />
+              <Route path="strangelydisturbingcuisine/explore/products/:id" element={<ProductInfo dispatch={dispatch} />} />
               <Route path="*" element={<ErrorPage />} />
-              <Route path="checkout" element={
+              <Route path="strangelydisturbingcuisine/checkout" element={
                 <Checkout cart={selectedProducts} dispatch={dispatch}>
 
                 </Checkout>
               } />
-            </Route>
 
           </Routes>
         </ThemeProvider>

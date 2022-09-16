@@ -45,7 +45,7 @@ export default function NavDrawer({ openDrawer, toggleDrawer }) {
                                     </ListItemButton>
                                 </ListItem>
                             </Link>
-                            <Link to="explore/collections" style={{ textDecoration: 'none', color: 'rgb(0 0 0 /0.7)' }}>
+                            <Link to="strangelydisturbingcuisine/explore/collections" style={{ textDecoration: 'none', color: 'rgb(0 0 0 /0.7)' }}>
                                 <ListItem disablePadding>
                                     <ListItemButton>
                                         <ListItemIcon>
@@ -55,7 +55,7 @@ export default function NavDrawer({ openDrawer, toggleDrawer }) {
                                     </ListItemButton>
                                 </ListItem>
                             </Link>
-                            <Link to="explore/products" style={{ textDecoration: 'none', color: 'rgb(0 0 0 /0.7)' }}>
+                            <Link to="strangelydisturbingcuisine/explore/products" style={{ textDecoration: 'none', color: 'rgb(0 0 0 /0.7)' }}>
                                 <ListItem disablePadding>
                                     <ListItemButton>
                                         <ListItemIcon>
@@ -65,7 +65,7 @@ export default function NavDrawer({ openDrawer, toggleDrawer }) {
                                     </ListItemButton>
                                 </ListItem>
                             </Link>
-                            <Link to="checkout" style={{ textDecoration: 'none', color: 'rgb(0 0 0 /0.7)' }}>
+                            <Link to="strangelydisturbingcuisine/checkout" style={{ textDecoration: 'none', color: 'rgb(0 0 0 /0.7)' }}>
                                 <ListItem disablePadding>
                                     <ListItemButton>
                                         <ListItemIcon>

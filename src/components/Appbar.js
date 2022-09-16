@@ -76,7 +76,7 @@ function Appbar({ cart, setSelectedProducts, dispatch, open, setOpen, prodName, 
                 There are no items in your cart.
             </Typography>
 
-            <Button component={Link} to="explore/products" variant='outlined' sx={{ width: '100%', mt: 2 }}>
+            <Button component={Link} to="strangelydisturbingcuisine/explore/products" variant='outlined' sx={{ width: '100%', mt: 2 }}>
 
                 Explore
 

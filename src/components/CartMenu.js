@@ -86,7 +86,7 @@ function CartMenu({ array1, array2, dispatch }) {
                     </Typography>
                     {location.pathname === '/checkout' && null}
                     {location.pathname !== '/checkout' &&
-                        <Button component={Link} to="/checkout" variant="contained" size="small">
+                        <Button component={Link} to="strangelydisturbingcuisine/checkout" variant="contained" size="small">
                             Checkout
                         </Button>
                     }
