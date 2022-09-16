@@ -120,7 +120,7 @@ function App() {
 
 
           <Routes>
-            <Route path="/" element={<Landing />} />
+            <Route path="strangelydisturbingcuisine" element={<Landing />} />
             <Route path="explore" element={<Explore />} />
             <Route path="explore/collections" element={<Collections />} />
             <Route path="explore/products" element={<Store

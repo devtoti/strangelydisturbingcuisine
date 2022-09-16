@@ -27,7 +27,7 @@ function ErrorPage() {
                 </Typography>
         
 
-                <Link to="/" style={{ width: '100%', textAlign: 'center', position: 'absolute', textDecoration:'none', bottom: "2rem"}}>
+                <Link to="strangelydisturbingcuisine" style={{ width: '100%', textAlign: 'center', position: 'absolute', textDecoration:'none', bottom: "2rem"}}>
 
                     <Typography variant="h6" component="p" >
                         Go back to home page

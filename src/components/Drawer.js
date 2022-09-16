@@ -35,7 +35,7 @@ export default function NavDrawer({ openDrawer, toggleDrawer }) {
                     >
                         <List>
 
-                            <Link to="/" style={{ textDecoration: 'none', color: 'rgb(0 0 0 /0.7)' }}>
+                            <Link to="strangelydisturbingcuisine" style={{ textDecoration: 'none', color: 'rgb(0 0 0 /0.7)' }}>
                                 <ListItem disablePadding>
                                     <ListItemButton>
                                         <ListItemIcon>
