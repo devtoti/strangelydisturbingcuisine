@@ -20,7 +20,6 @@ import { useLocation } from 'react-router-dom'
 
 function CartMenu({ array1, array2, dispatch }) {
     const location = useLocation()
-console.log(location.pathname)
     return (
 
 

@@ -52,17 +52,14 @@ function App() {
   }
 
   function reducer(state, action) {
-    // console.log(state[action.id].qty)
-    // console.table(state)
+
     let ix;
 
-    //DEEP CLONE GOD LEVEL//
     const newState = JSON.parse(JSON.stringify(state))
     switch (action.name) {
       case 'add':
         ix = state.findIndex(p => p.id === action.id)
         newState[ix].qty += action.qty || 1
-        openAlert(action.product)
         return newState
 
       case 'remove':

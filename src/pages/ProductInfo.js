@@ -38,12 +38,12 @@ function ProductInfo({ dispatch }) {
     setTotalPrice(data.price)
   }, [data])
 
-  
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsInCart(false)
 
-    }, 1500);
+    }, 1000);
 
     return () => {
       clearTimeout(timeout)
@@ -52,6 +52,7 @@ function ProductInfo({ dispatch }) {
   }, [isInCart])
 
   useEffect(() => {
+
     setTotalPrice(value * data.price)
     setUserQuantity(value)
   }, [value])
@@ -71,6 +72,12 @@ function ProductInfo({ dispatch }) {
     setUserQuantity(value)
   }
 
+  function updateInput(e) {
+    const itemNum = e.target.valueAsNumber
+    if (!itemNum) setValue(1)
+    else if (itemNum >= 50) setValue(50)
+    else setValue(itemNum)
+  }
 
   const EmptyCartMenu = () => {
     return <Box p={2} pt={0}
@@ -96,25 +103,29 @@ function ProductInfo({ dispatch }) {
     <>
 
 
-      <Container maxWidth="sm" sx={{ backgroundColor: 'hsl(50 20% 90%)', display: 'flex', flexDirection: 'column', flewWrap: 'wrap', height: winHeight - NAVBAR_HEIGHT, position: 'relative' }}>
+      <Container maxWidth="sm" sx={{
+        // backgroundColor: 'hsl(50 20% 90%)',
+         display: 'flex', flexDirection: 'column', flewWrap: 'wrap',
+        height: winHeight - NAVBAR_HEIGHT,
+        position: 'relative',
+      }}>
         <Box pt={2}>
           <CardMedia
             component="img"
-            height="250"
+
             image={img}
             alt={description}
+            sx={{ height: { xs: 200, sm: 300 } }}
           />
-          <ImageList cols={4} sx={{ mt: 1 }}>
+          <ImageList cols={4} sx={{ mt: 1, overflow: 'hidden', height: { xs: 75, sm: 100, md: 150 } }}>
             {Array.from(Array(4)).map((item, ix) => (
               <ImageListItem key={ix}
-                sx={{ height: "100px" }}
               >
                 <img
                   src={img}
                   srcSet={img}
                   alt={description}
                   loading="lazy"
-                  style={{ width: '100%', height: '100px' }}
                 />
               </ImageListItem>
             ))}
@@ -133,48 +144,57 @@ function ProductInfo({ dispatch }) {
         <Typography variant="subtitle2" component="h3">
           {category}
         </Typography>
-        <Typography variant="body2" component="p" sx={{ paddingTop: 2 }}>
+        <Typography variant="body2" component="p" sx={{ paddingTop: 2, flewGrow: 2 }}>
           {description}
         </Typography>
 
 
 
-        <Box sx={{ mt: 'auto', mb: 2 }}>
+        <Box pt={2}>
+          <Typography>
+            Quantity
+          </Typography>
+          <input type="number" min="1" max={50} placeholder="" step="1" value={value}
+            onChange={(e) => updateInput(e)}
+            style={{ padding: "0 1rem" }}></input>
+        </Box>
+        <Box sx={{ mt: 'auto', mb: 2, pb: 2, 
+        // backgroundColor: 'hsl(50 20% 90%)' 
+      }}
+        >
+          <Typography variant="subtitle1" component="p" pt={1}>
+            Price
+          </Typography>
 
-          <Stack direction="row" justifyContent="space-between" alignItems="flex-end" spacing={{ xs: 1, sm: 2, md: 4 }}>
+          <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={{ xs: 1, sm: 2, md: 4 }}
+          // sx={{outline: '1px solid green'}}
+          >
             <Box>
-
-              <Typography variant="subtitle1" component="p">
-                Price
-              </Typography>
               <Typography variant="h4" component="p">
                 ${totalPrice}
               </Typography>
             </Box>
-            <Box pt={2}>
-              <Typography>
-                Quantity
-              </Typography>
-              <input type="number" min="1" max={50} placeholder="" step="1" value={value}
-                onChange={(e) => setValue(e.target.valueAsNumber)} style={{ padding: "0 1rem" }}></input>
-            </Box>
             <Stack direction="row" alignItems="center" >
               <Typography variant="body1" component="p" pr={1} sx={{ color: grey[500] }}>
-                ${price}
+                ${price}/pc
               </Typography>
-              <Button variant="outlined" onClick={() => dispatch({ name: 'add', qty: userQuantity, id, product: name })} sx={{ height: "3rem" }}>Add to cart</Button>
+              <IconButton onClick={() => {
+                setIsInCart(true)
+                dispatch({ name: 'add', qty: userQuantity, id, product: name })
+              }}>
+                <Button variant="outlined" sx={{ height: "2rem" }}>Add to cart</Button>
+              </IconButton>
             </Stack>
-
-            <Backdrop
-              sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-              open={isInCart}
-            >
-              <CircularProgress color="inherit" />
-            </Backdrop>
           </Stack>
         </Box>
-
       </Container>
+
+      <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={isInCart}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
 
     </>
   )

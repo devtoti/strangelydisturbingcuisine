@@ -92,7 +92,7 @@ const products = [
     },
     {
         id: 10,
-        name: 'Evil Pickles Jar',
+        name: 'Evil Jar of Pickles',
         rating: 3,
         price: 26,
         img: 'https://i.postimg.cc/3wyNmTsB/photo-2022-09-14-20-12-35.jpg',

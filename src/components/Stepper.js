@@ -78,7 +78,7 @@ export default function HorizontalLinearStepper({children}) {
       {activeStep === steps.length ? (
         <React.Fragment>
           <Typography variant="subtitle1" sx={{ mt: 2, mb: 1, pl: 3}}>
-           Thank you for reaching this far of my app. You have successfully purchased your exotic dishes. Do not forget to visit my personal portfolio and drop me a message.
+          Congratulations! You have successfully purchased your exotic dishes at SD Cuisine. Do not forget to visit my personal portfolio for more projects.
           </Typography>
           <Typography variant="subtitle2" sx={{ mt: 2, mb: 1, pl: 3}}>
            -Antonio Ruiz

@@ -47,11 +47,12 @@ function Landing() {
           Stores
         </Typography>
         <Typography variant="h6" component="h1" sx={{ textAlign: "start", color: grey[400] }}>
-          Visit your nearest stores' products with just one click
+          Visit your nearest store with just one click
         </Typography>
         <ImageList
-          sx={{ width: '100%', height: 450 }}
-          cols={4} gap={15}>
+          sx={{ width: '100%', height: 'auto'}}
+          gap={15}>
+          
           {stores.map((item, id) => {
             return (
               <ImageListItem key={id} component={Link} to="/strangelydisturbingcuisine/explore/products">

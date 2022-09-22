@@ -23,9 +23,7 @@ function Product({ item, dispatch }) {
                         onClick={() => dispatch({ name: 'remove', qty: 1, id, product: name })}>
                         <RemoveIcon />
                     </IconButton>
-                    <Typography variant="subtitle1" fontWeight="bold" pr={1} pl={1}
-                    // sx={{padding: '8px', verticalAlign: 'middle',border: '1.5px solid', borderColor: blue[500], borderRadius: '4px'}}
-                    >
+                    <Typography variant="subtitle1" fontWeight="bold" pr={1} pl={1}>
                         {qty}
                     </Typography>
                     <IconButton variant='outlined' component="button" size="small"
@@ -57,12 +55,7 @@ function Product({ item, dispatch }) {
 
         <Card sx={{
             borderRadius: 0, position: 'relative',
-            // maxHeight: '300px', overflowX: 'hidden'
         }}>
-
-
-            {/* <FavoriteBorderIcon sx={{ position: 'absolute', right: 0, color: red[300] }} /> */}
-
             <CardMedia
                 component="img"
                 height="200"
