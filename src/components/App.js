@@ -94,7 +94,7 @@ function App() {
       },
     },
     listItemText: {
-      fontSize: '4rem',//Insert your required size
+      fontSize: '4rem',
     }
   });
 
@@ -115,23 +115,21 @@ function App() {
         <Routes>
 
           <Route path="/" element={<Landing />} />
-          {/* <Route path="/sdcuisine" element={<Landing />} />
-            <Route path="/landing" element={<Landing />} />
-            <Route path="*" element={<Navigate to="/sdcuisine" />} />
-            <Route path="/explore" element={<Explore />} />
-            <Route path="/explore/collections" element={<Collections />} />
-            <Route path="/explore/products" element={<Store
-              dispatch={dispatch}
-              products={selectedProducts}
-            />} />
-            <Route path="/explore/products/:id" element={<ProductInfo dispatch={dispatch} />} />
-            <Route path="/error" element={<ErrorPage />} />
-            <Route path="/err" element={<Navigate to="/error" />} />
-            <Route path="/checkout" element={
-              <Checkout cart={selectedProducts} dispatch={dispatch}>
+          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/explore/collections" element={<Collections />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/explore/collections" element={<Collections />} />
+          <Route path="/explore/products" element={<Store
+            dispatch={dispatch}
+            products={selectedProducts}
+          />} />
+          <Route path="/explore/products/:id" element={<ProductInfo dispatch={dispatch} />} />
+          <Route path="/error" element={<ErrorPage />} />
+          <Route path="/checkout" element={
+            <Checkout cart={selectedProducts} dispatch={dispatch}>
 
-              </Checkout>
-            } /> */}
+            </Checkout>
+          } />
 
         </Routes>
       </ThemeProvider>

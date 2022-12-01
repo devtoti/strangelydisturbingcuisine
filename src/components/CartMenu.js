@@ -83,9 +83,9 @@ function CartMenu({ array1, array2, dispatch }) {
 
                         ${array2.reduce((prev, curr) => prev + (curr.qty * curr.price), 0)}
                     </Typography>
-                    {location.pathname === '/strangelydisturbingcuisine/checkout' && null}
-                    {location.pathname !== '/strangelydisturbingcuisine/checkout' &&
-                        <Button component={Link} to="strangelydisturbingcuisine/checkout" variant="contained" size="small">
+                    {location.pathname === '//checkout' && null}
+                    {location.pathname !== '/checkout' &&
+                        <Button component={Link} to="/checkout" variant="contained" size="small">
                             Checkout
                         </Button>
                     }
