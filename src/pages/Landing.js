@@ -5,7 +5,6 @@ import { Link, Outlet } from 'react-router-dom'
 import img2 from '../../public/images/turtle-dish.jpg'
 import { blue } from '@mui/material/colors'
 import bgimgs from '../components/imgCarrousel'
-// console.log(bgimgs)
 const NAVBAR_HEIGHT = 64
 let COUNT = 0
 
@@ -19,7 +18,6 @@ function Landing() {
   }, [])
 
   useEffect(() => {
-    // console.log(COUNT)
     const interval = setInterval(() => {
       let modulo = COUNT % bgimgs.length
       setCurrBgImg(bgimgs[modulo].img)

@@ -19,11 +19,12 @@ import Redirect from '../pages/Redirect'
 
 import { AppBar, Toolbar, Collapse, Avatar, Menu, MenuItem, Box, Grid, Alert, CardMedia, Card, CardContent, Button, Tooltip, Stack, Rating, ImageList, ImageListItem } from '@mui/material'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Routes,
   Route,
   Link,
+  Navigate,
   useLocation
 } from "react-router-dom";
 import Product from './Product'
@@ -100,42 +101,40 @@ function App() {
 
   return (
     <>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <Appbar
+          cart={selectedProducts}
+          dispatch={dispatch}
+          open={open}
+          setOpen={setOpen}
+          prodName={prodName}
+        >
+        </Appbar>
 
-      <Router>
-        <CssBaseline />
-        <ThemeProvider theme={theme}>
-          <Appbar
-            cart={selectedProducts}
-            dispatch={dispatch}
-            open={open}
-            setOpen={setOpen}
-            prodName={prodName}
-          // setSelectedProducts={setSelectedProducts} 
-          >
+        <Routes>
 
-          </Appbar>
-
-
-          <Routes>
-            <Route path="strangelydisturbingcuisine" element={<Landing />} />
-            <Route path="/" element={<Landing />} />
-            <Route path="strangelydisturbingcuisine/explore" element={<Explore />} />
-            <Route path="strangelydisturbingcuisine/explore/collections" element={<Collections />} />
-            <Route path="strangelydisturbingcuisine/explore/products" element={<Store
+          <Route path="/" element={<Landing />} />
+          {/* <Route path="/sdcuisine" element={<Landing />} />
+            <Route path="/landing" element={<Landing />} />
+            <Route path="*" element={<Navigate to="/sdcuisine" />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/explore/collections" element={<Collections />} />
+            <Route path="/explore/products" element={<Store
               dispatch={dispatch}
               products={selectedProducts}
             />} />
-            <Route path="strangelydisturbingcuisine/explore/products/:id" element={<ProductInfo dispatch={dispatch} />} />
-            <Route path="*" element={<ErrorPage />} />
-            <Route path="strangelydisturbingcuisine/checkout" element={
+            <Route path="/explore/products/:id" element={<ProductInfo dispatch={dispatch} />} />
+            <Route path="/error" element={<ErrorPage />} />
+            <Route path="/err" element={<Navigate to="/error" />} />
+            <Route path="/checkout" element={
               <Checkout cart={selectedProducts} dispatch={dispatch}>
 
               </Checkout>
-            } />
+            } /> */}
 
-          </Routes>
-        </ThemeProvider>
-      </Router>
+        </Routes>
+      </ThemeProvider>
     </>
   )
 }

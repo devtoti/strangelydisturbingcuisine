@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  BrowserRouter
 } from "react-router-dom";
 
 import App from "../src/components/App";
@@ -15,6 +16,8 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App />
+    <Router hashType="slash">
+      <App />
+    </Router>
   </StrictMode>
 );

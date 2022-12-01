@@ -104,12 +104,7 @@ function Appbar({ cart, setSelectedProducts, dispatch, open, setOpen, prodName, 
                         </Typography>
                     </Toolbar>
                     <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                        {/* <Tooltip title="Notifications">
-                            <Box>
-                                <div className="notif-status" style={{ backgroundColor: isAlertOpen ? red[600] : 'transparent' }}></div>
-                                <NotificationsNoneIcon sx={{ mr: { xs: 1, md: 2, lg: 3 }, cursor: 'pointer', }} onClick={() => setIsAlertOpen(a => !a)} />
-                            </Box>
-                        </Tooltip> */}
+                   
                         <Tooltip title="Cart">
 
 

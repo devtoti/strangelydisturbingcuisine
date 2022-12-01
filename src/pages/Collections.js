@@ -55,7 +55,7 @@ function Landing() {
           
           {stores.map((item, id) => {
             return (
-              <ImageListItem key={id} component={Link} to="/strangelydisturbingcuisine/explore/products">
+              <ImageListItem key={id} component={Link} to="/explore/products">
                 <ImageListItemBar 
                 title={item.name}
                 position="top"
